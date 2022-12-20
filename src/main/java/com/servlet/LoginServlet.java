@@ -17,16 +17,6 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         req.getSession().invalidate();
-        User u1 = new User("Andrey",     "dyushapook", "qwerty");
-        User u2 = new User("Sasha",     "sashasl", "qwerty123");
-        User u3 = new User("Vova",     "volodbol", "qwerty456");
-        User u4 = new User("Anton",     "elbebra17", "123qwerty");
-        User u5 = new User("Андрей",     "Андрей17", "Андрей17Андрей17");
-        DataBase.create(u1);
-        DataBase.create(u2);
-        DataBase.create(u3);
-        DataBase.create(u4);
-        DataBase.create(u5);
         boolean isInvalid = req.getParameter("incorrect") != null;
         req.setAttribute("isInvalid", isInvalid);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/login.jsp");
